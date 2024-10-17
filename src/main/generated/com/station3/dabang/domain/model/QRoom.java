@@ -21,15 +21,17 @@ public class QRoom extends EntityPathBase<Room> {
 
     public final NumberPath<Integer> deposit = createNumber("deposit", Integer.class);
 
-    public final NumberPath<Long> id = createNumber("id", Long.class);
+    public final StringPath description = createString("description");
 
-    public final StringPath name = createString("name");
+    public final NumberPath<Long> id = createNumber("id", Long.class);
 
     public final NumberPath<Integer> price = createNumber("price", Integer.class);
 
     public final EnumPath<RoomType> roomType = createEnum("roomType", RoomType.class);
 
     public final EnumPath<SellingType> sellingType = createEnum("sellingType", SellingType.class);
+
+    public final NumberPath<Long> userId = createNumber("userId", Long.class);
 
     public QRoom(String variable) {
         super(Room.class, forVariable(variable));

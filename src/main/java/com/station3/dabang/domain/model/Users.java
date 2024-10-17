@@ -1,30 +1,32 @@
 package com.station3.dabang.domain.model;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "room")
+@Table(name = "USERS")
 @Getter
-public class Room {
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+public class Users {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private Long userId;
-    @Enumerated(EnumType.STRING)
-    private RoomType roomType;
-    @Enumerated(EnumType.STRING)
-    private SellingType sellingType;
-    private int deposit; // 보증금
-    private int price; // 월세
-    private String description;
+
+    @Column(nullable = false, unique = true)
+    private String email;
+
+    @Column(nullable = false)
+    private String password;
+
 }

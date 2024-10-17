@@ -1,4 +1,4 @@
-package com.station3.dabang.web.dto;
+package com.station3.dabang.web.dto.room;
 
 import com.station3.dabang.domain.model.RoomType;
 import com.station3.dabang.domain.model.SellingType;
