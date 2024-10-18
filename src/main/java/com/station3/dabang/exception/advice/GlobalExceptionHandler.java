@@ -31,7 +31,7 @@ public class GlobalExceptionHandler {
     }
 
     @ExceptionHandler(DabangException.class)
-    protected ResponseEntity<DabangResponse<Object>> handleAblyException(DabangException ex) {
+    protected ResponseEntity<DabangResponse<Object>> handleDabangException(DabangException ex) {
         DabangResponse<Object> response = DabangResponse.builder()
                 .data(null)
                 .result(ex.getResult())

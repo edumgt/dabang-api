@@ -51,6 +51,8 @@ public class SecurityConfig {
                 // CSRF 비활성화 (JWT를 사용할 경우 필요하지 않음)
                 .csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests()
+                .antMatchers("/swagger-ui/**", "/v3/api-docs/**")
+                .permitAll()
                 .antMatchers("/api/v1/authenticate"
                         , "/api/v1/register"
                         , "/api/v1/search/rooms/**")

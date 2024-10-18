@@ -6,6 +6,7 @@ import com.station3.dabang.domain.model.RoomType;
 import com.station3.dabang.web.common.DabangResponse;
 import com.station3.dabang.web.common.PageDto;
 import com.station3.dabang.web.common.ResponseCode;
+import com.station3.dabang.web.dto.room.RoomResponse;
 import com.station3.dabang.web.dto.room.RoomSearchFilter;
 import io.swagger.v3.oas.annotations.Operation;
 import lombok.RequiredArgsConstructor;
@@ -25,15 +26,15 @@ public class RoomSearchController {
 
     @GetMapping("/type/{roomType}")
     @Operation(summary = "전체 방 목록 검색")
-    public ResponseEntity<DabangResponse<PageDto<Room>>> getRoomsBySearchFilter(
+    public ResponseEntity<DabangResponse<PageDto<RoomResponse>>> getRoomsBySearchFilter(
             @PathVariable String roomType,
             @ModelAttribute RoomSearchFilter filter,
             Pageable pageable
     ) {
         RoomType type = getRoomType(roomType);
-        PageDto<Room> rooms = searchRoomService.getRoomsBySearchFilter(type, filter, pageable);
+        PageDto<RoomResponse> rooms = searchRoomService.getRoomsBySearchFilter(type, filter, pageable);
         return ResponseEntity.ok(
-                DabangResponse.<PageDto<Room>>builder()
+                DabangResponse.<PageDto<RoomResponse>>builder()
                         .data(rooms)
                         .result(ResponseCode.SUCCESS.result)
                         .message(ResponseCode.SUCCESS.message)

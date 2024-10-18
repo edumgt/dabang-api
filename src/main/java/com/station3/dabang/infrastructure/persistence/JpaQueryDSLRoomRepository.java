@@ -18,7 +18,7 @@ import java.util.List;
 
 @Repository
 @RequiredArgsConstructor
-public class JpaCustomRoomRepository implements RoomRepository {
+public class JpaQueryDSLRoomRepository implements JpaCustomRepository {
 
     private final JPAQueryFactory queryFactory;
 

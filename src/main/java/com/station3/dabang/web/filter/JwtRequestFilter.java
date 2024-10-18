@@ -78,7 +78,7 @@ public class JwtRequestFilter extends OncePerRequestFilter {
         } catch (UnsupportedJwtException e) {
             sendErrorResponse(response, "지원하지 않는 토큰입니다.");
         } catch (SignatureException e) {
-            sendErrorResponse(response, "시그니처 검증에 실패한 토큰입니다.");
+            sendErrorResponse(response, "토큰 검증에 실패했습니다.");
         }
 
     }
@@ -98,8 +98,7 @@ public class JwtRequestFilter extends OncePerRequestFilter {
 
     private final static List<String> openPaths = Arrays.asList(
             "/api/v1/authenticate",
-            "/api/v1/register",
-            "/api/v1/search/rooms/**"
+            "/api/v1/register"
     );
 
     private boolean checkOpenPath(String requestPath) {

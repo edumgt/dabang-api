@@ -35,7 +35,7 @@ CREATE INDEX idx_room_filters
     ON ROOM (room_type, selling_type, deposit, price);
 
 INSERT INTO ROOM (user_id, room_type, selling_type, deposit, price, description) VALUES
-                        (1, "ONE_ROOM", "MONTHLY_RENT", 10000000, 500000, "원룸1000에50입니다."),
-                        (1, "ONE_ROOM", "MONTHLY_RENT", 20000000, 300000, "원룸2000에30야~"),
-                        (1, "TWO_ROOM", "LEASE", 50000000, 0, "투룸5000전세!!"),
-                        (1, "THREE_ROOM", "LEASE", 70000000, 0, "쓰리룸7000전세@@@");
+                        (1, "ONE_ROOM", "MONTHLY_RENT", 1000, 50, "원룸1000에50입니다."),
+                        (1, "ONE_ROOM", "MONTHLY_RENT", 2000, 30, "원룸2000에30야~"),
+                        (1, "TWO_ROOM", "LEASE", 5000, 0, "투룸5000전세!!"),
+                        (1, "THREE_ROOM", "LEASE", 7000, 0, "쓰리룸7000전세@@@");

@@ -11,8 +11,9 @@ public enum ResponseCode {
     FORBIDDEN(403, "권한이 없습니다.", HttpStatus.FORBIDDEN),
     INTERNAL_SERVER_ERROR(500, "API 요청 처리 중 에러 발생", HttpStatus.INTERNAL_SERVER_ERROR),
     // users
-    USERS_NOT_FOUND(404, "유저(%s)가 존재하지 않습니다.", HttpStatus.INTERNAL_SERVER_ERROR),
     USERS_ALREADY_EXIST(500, "해당 유저 이메일은 이미 존재합니다.", HttpStatus.INTERNAL_SERVER_ERROR),
+    // room
+    ROOM_NOT_FOUND(404, "해당 방이 존재하지 않습니다.", HttpStatus.INTERNAL_SERVER_ERROR),
     ;
 
     public final int result;
